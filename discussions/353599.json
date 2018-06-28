@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "828591",
+    "ThreadId": "353599",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I had a situation where I had one item in an ObservableCollection that was being used in a CLINQ expression. I cleared the ObservableCollection, then re-added that same item. I got an exception in NotifyCollectionChangedMonitor.SubscribeToItem at the line\r\n that says:</p>\r\n<p>&nbsp;&nbsp; this.Subscriptions.Add(item, subscriptionTree);</p>\r\n<p>The exception was that the key already exists, and sure enough, 'item' was already in the Subscriptions dictionary.</p>\r\n<p>If I changed the Clear of my ObservableCollection to a RemoveAt(0), then re-added the item, CLINQ worked fine.</p>\r\n<p>When I do the RemoveAt, NotifyCollectionChangedMonitor.UnsubscribeFromItem gets called and it has a line that says:</p>\r\n<p>&nbsp;&nbsp; this.Subscriptions.Remove(item);</p>\r\n<p>But if I call Clear instead of RemoveAt, NotifyCollectionChangedMonitor.ClearSubscriptions is called and it does not appear to clear the Subscriptions dictionary.</p>\r\n<p>Is this a bug?</p>\r\n<p>Thanks,</p>\r\n<p>&nbsp;&nbsp; Bob Alexander</p>\r\n",
+    "PostedDate": "2012-04-25T12:10:28.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

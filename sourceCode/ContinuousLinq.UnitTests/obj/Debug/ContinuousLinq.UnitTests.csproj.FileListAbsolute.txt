@@ -1,0 +1,2 @@
+C:\_CS\clinq\sourceCode\ContinuousLinq.UnitTests\obj\Debug\ContinuousLinq.UnitTests.csprojResolveAssemblyReference.cache
+C:\_CS\clinq\sourceCode\ContinuousLinq.UnitTests\obj\Debug\ContinuousLinq.UnitTests.csproj.CoreCompileInputs.cache

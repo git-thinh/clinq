@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "78951",
+    "ThreadId": "23563",
+    "Html": "\r\nDoes anybody knows or have an example of how to use CLinq with databases?<br />It looks like CLinq is good to be used with in memory data only and cannot work with databases.<br />",
+    "PostedDate": "2008-03-07T06:24:24.42-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "78967",
+    "ThreadId": "23563",
+    "Html": "<br /><div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />olegkap wrote:<br />Does anybody knows or have an example of how to use CLinq with databases?<br />It looks like CLinq is good to be used with in memory data only and cannot work with databases.<br /><br /><br /></div><br />For working with databases, you are generally using an active pull model, and not being pushed data in a streaming fashion. The general paradigm with a database is a user-requested pull or push in response to some action. CLINQ was built to handle the scenario where data is streaming into your application in the background asynchronously and potentially quite rapidly. People don't normally use database applications in this manner.<br /><br />That said, there is nothing preventing you from polling your database on a timer and then filling a ContinuousCollection with query results that can then be continuously filtered/ordered/grouped by CLINQ.<br />",
+    "PostedDate": "2008-03-07T07:14:03.197-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

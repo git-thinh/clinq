@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "265546",
+    "ThreadId": "77672",
+    "Html": "<p>First of all, Thank you for this priceless library!</p>\r\n<p>Here is my issue and suggestion to get around it:</p>\r\n<p>Inheriting a Serializable class from ReactiveObject serializes <strong>SuppressPropertyChanged </strong>&amp; <strong>Dispatcher </strong>properties as well. Would it be a good idea to mark &quot;XmlIgnore&quot; these public properties? This is what I did in my local copy. But wanted to know if there is any specific design reason why &quot;Dispatcher&quot; is kept as a public property instead of protected. I can see that we might want to &quot;Suppress Property Changed&quot; on a particular reactive object in some places.</p>\r\n<p>Any thoughts?</p>",
+    "PostedDate": "2009-12-09T21:29:10.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

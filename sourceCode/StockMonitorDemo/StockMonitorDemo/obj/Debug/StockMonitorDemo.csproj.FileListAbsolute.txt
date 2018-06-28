@@ -1,0 +1,17 @@
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\bin\Debug\StockMonitorDemo.exe
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\bin\Debug\StockMonitorDemo.pdb
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\bin\Debug\ContinuousLinq.dll
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\bin\Debug\ContinuousLinq.pdb
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\obj\Debug\StockMonitorDemo.csprojResolveAssemblyReference.cache
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\obj\Debug\Views\MainWindow.g.cs
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\obj\Debug\App.g.cs
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\obj\Debug\StockMonitorDemo_MarkupCompile.cache
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\obj\Debug\StockMonitorDemo_MarkupCompile.lref
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\obj\Debug\Views\MainWindow.baml
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\obj\Debug\StockMonitorDemo.g.resources
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\obj\Debug\StockMonitorDemo.Properties.Resources.resources
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\obj\Debug\StockMonitorDemo.csproj.GenerateResource.Cache
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\obj\Debug\StockMonitorDemo.csproj.CoreCompileInputs.cache
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\obj\Debug\StockMonitorDemo.exe
+C:\_CS\clinq\sourceCode\StockMonitorDemo\StockMonitorDemo\obj\Debug\StockMonitorDemo.pdb

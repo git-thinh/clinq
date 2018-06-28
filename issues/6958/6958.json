@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I had a little bit of a difficulty using this within a .NET 4.0 solution. The compiler was complaining that there were duplicate implementations of the Func and Action delegates. In the end, I recompiled the solution (Clinq 2.2) and updated the Curry.tt file so that it didn't create as many of these delegates. I've attached my updated Curry.tt file.",
+    "LastUpdatedDate": "2013-02-14T11:18:58.197-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "clinq",
+    "ReportedDate": "2010-07-07T09:57:06.79-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Using with .NET 4.0",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 6958
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2275,
+      "FileName": "Curry.tt",
+      "DownloadUrl": ".\\2275"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I see what happened. Curry.tt generates a bunch of System.Action<> and System.Func<> delegates with as few as 6 and as many as 20 arguments. In 3.5, .NET only included Action and Func with up to 5 arguments, so there was no name collision. In 4.0, .NET has added Action and Func delegates with up to 16 arguments, so the names Curry was generating collided.\r\n\r\nYour modification removes Curry's Action and Func with 6 through 16 arguments but continues to generate them with 17, 18, 19, and 20 arguments.\r\n\r\nAlas, I figured this all out on my own before coming across your post. Still, thank you!\r\n",
+      "PostedDate": "2011-03-11T10:32:53.223-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-03-11T10:33:01.81-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-05-24T16:21:13.123-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-14T11:18:58.197-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

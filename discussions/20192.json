@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "66989",
+    "ThreadId": "20192",
+    "Html": "\r\nIn the code that was bundled with the v1.0.0.0, any element that was in a collection that was being extended by the query extender required that the element implement IEquatable&lt;T&gt;. Basically what this meant was that if your model object was ContinuousCollection&lt;Customer&gt;, you had to go and manually implement IEquatable&lt;Customer&gt; on that object. This wasn't too big of a deal, but it was tedious busywork that I never thought I should've been required to do.<br /><br />Turns out that after a couple of refactorings that took place before we put out v1.0.0.0, the code that made me require IEquatable&lt;T&gt; is no longer in there, so I've removed that requirement as of Changeset 1473. This change simplifies the model objects that need to be created for WPF databinding considerably and will be incorporated in the next release of CLINQ. For now, if you want the simplified code with less stringent requirements on your model objects, just grab any code from Changeset 1473 or later and ignore the v1.0.0.0 bundled ZIP release.<br />",
+    "PostedDate": "2008-01-09T12:16:16.333-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

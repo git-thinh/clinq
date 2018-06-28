@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "My problem is that the select statement when creating _legalDrinkers doesn't compile. The error message is as follows:\n \nCannot implicitly convert type 'ContinuousLinq.ReadOnlyContinuousCollection<ConsoleApplication1.Customer>' to 'ContinuousLinq.ContinuousCollection<ConsoleApplication1.Customer>'\n \nI am using version 2.1.0.0 of CLINQ.\n \nBest regards,\nDisore",
+    "LastUpdatedDate": "2013-02-14T11:18:58.753-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "clinq",
+    "ReportedDate": "2009-11-10T01:52:26.15-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Can't compile 'Hello World - CLINQ Style'",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 5450
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have the same problem... using 2.2.0.0\r\nPlease, give us some light. Is not easy to get it to work without clues (doc & samples)",
+      "PostedDate": "2010-01-29T02:36:08.567-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I see, you can not use it with ContinuousCollections. Update this and will work:\r\n\r\n        private static ObservableCollection<Customer> _source = new ObservableCollection<Customer>();\r\n        private static ReadOnlyContinuousCollection<Customer> _legalDrinkers = from cust in _source\r\n                                                                       where cust.Age >= 21\r\n                                                                       select cust;",
+      "PostedDate": "2010-01-29T03:02:24.317-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-14T11:18:58.753-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

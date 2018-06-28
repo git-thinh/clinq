@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Fixed with rewrite of SelectMany",
+    "ClosedDate": "2009-10-20T09:07:44.757-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "clinq2\\collections\\selectmanyreadonlycontinuouscollection.cs\n \nin         public override TResult this[int index]\n \n-                    if (index <= resultItems.Count() + tempIndex)\n+                    if (index < resultItems.Count() + tempIndex)\n \nLoving clinq so far!",
+    "LastUpdatedDate": "2013-05-16T01:33:40.643-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "clinq",
+    "ReportedDate": "2008-11-20T09:29:10.45-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "indexing error",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 3401
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1286,
+      "FileName": "SelectManyReadOnlyContinuousCollectionTest.cs",
+      "DownloadUrl": ".\\1286"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "So, I decided I'd write a unittest to show the need for this change, and succeeded, but I can't figure out why my AddItem and RemoveItem tests are failing.  Here's the code anyway, gotta move on for now.",
+      "PostedDate": "2008-12-31T13:49:24.9-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-31T13:49:27.99-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-08-31T07:35:32.66-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-20T09:07:44.757-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-14T11:18:59.46-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T01:33:40.643-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<div class="wikidoc"><h1>How CLINQ Works</h1>
+Before discussing how Continuous LINQ is possible, we should take a quick look at how LINQ is possible. LINQ queries are made possible through some syntactic magic that was put into the .NET Framework v3.5.  <br />Keywords such as <b>where</b>, <b>select</b>, <b>from</b>, <b>orderby</b>, and <b>groupby</b> are converted from &quot;natural&quot; query syntax, which is the SQL-like syntax that most of us are familiar with, <br />into function calls that make extensive use of lambdas and language extensions to add these methods to objects of type <i>IEnumerable&lt;T&gt;</i>, etc.<br /><br />For example, the following natural syntax LINQ query:<br /><pre>
+    var q = from cust in rawData.Customers
+                where cust.Age &gt; 21
+                orderby cust.Name
+                select cust;
+</pre><br /><br />will be re-written in language extension syntax by the compiler to look more like this:<br /><pre>
+    var q = rawData.Customers.Where( cust =&gt; cust.Age &gt; 21).OrderBy( cust =&gt; cust.Name ).Select ( row =&gt; row );
+</pre><br />
+<h1>Extending LINQ with Language Extensions</h1>
+If you want to inject your own code into the query pipeline that operates on objects of a particular type, then all you really need to do is implement your own language extensions on that type, <i>provided those extensions match the signatures of the default LINQ extensions</i>.<br /><br />The goal of Continuous LINQ is to ride on top of the normal LINQ queries. Whenever you issue a LINQ query against a special type (e.g. a ContinuousCollection), <br />CLINQ will inject listeners into the source that will propagate applicable changes to the output result set. <br />This is what allows you to write a query against a list of customers that only contains customers over age 21 that <i>continuously updates itself</i> when customers are added to and removed from the original source query, as well as when the age of customers is modified.<br /><br />Here is an example of one of the many language extensions that drives CLINQ. <br />This is an extension that adds a <b>Where</b> method on an input collection wrapper used for CLINQ housekeeping (it wraps ObservableCollection&lt;T&gt; instances).<br />Note how a new CLINQ collection is created for the output and a <b>FilteringViewAdapter&lt;T&gt;</b> is attached to the input. <br />This behavior that we call <i>adapter chaining</i> is key to allowing CLINQ to function properly.<br /><br /><pre>
+ private static ContinuousCollection&lt;T&gt; Where&lt;T&gt;(
+            InputCollectionWrapper&lt;T&gt; source, Func&lt;T, bool&gt; filterFunc) where T : INotifyPropertyChanged
+        {
+            Trace.WriteLine(&quot;Filtering Observable Collection.&quot;);
+            ContinuousCollection&lt;T&gt; output = new ContinuousCollection&lt;T&gt;();
+            new FilteringViewAdapter&lt;T&gt;(source, output, filterFunc);
+
+            return output;            
+        }
+</pre><br /><br />When more than one LINQ query segment exists, the output from one method call is passed as the input to the next language extension in line.<br />For example, in the following query:<br /><br /><pre>
+    var q = from order in rawData.Orders
+          where order.Price &gt; 500.00
+          orderby order.VendorID desc
+</pre><br /><br />Two adapters will be created. The <b>Where</b> method will be invoked, which will attach a <b>FilterViewAdapter&lt;T&gt;</b> to the source collection.<br />The output of that (which is dynamically updated by the FilterViewAdapter&lt;T&gt; in response to source events) will be passed as the input to the <b>OrderBy</b> method.<br />The <b>OrderBy</b> method will attach a <b>SortingViewAdapter&lt;T&gt;</b> to the input (which is the output of the filter, remember), and produce another CLINQ collection<br />as output.<br />This adapter chaining gives us nearly infinite flexibility and allows virtually any standard LINQ query to become continuous just by virtue of having the CLINQ namespace in scope or by querying directly against a ContinuousCollection&lt;T&gt;.</div><div class="ClearBoth"></div>

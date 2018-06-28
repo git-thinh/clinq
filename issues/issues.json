@@ -1,0 +1,70 @@
+[
+  {
+    "Id": 1028,
+    "Title": "OrderBy Expressions are not thread safe"
+  },
+  {
+    "Id": 1826,
+    "Title": "Aggregate Implementation is not doing \"deep listening\" yet"
+  },
+  {
+    "Id": 2011,
+    "Title": "Continuous Aggregation Ceases to work after some number of collection changes"
+  },
+  {
+    "Id": 2704,
+    "Title": "ContinuousLinq should output ReadOnlyObservableCollection"
+  },
+  {
+    "Id": 3401,
+    "Title": "indexing error"
+  },
+  {
+    "Id": 3538,
+    "Title": "Incorrect behavior for _graphWindowTicks in StockMonitorDemo?"
+  },
+  {
+    "Id": 4659,
+    "Title": "NullReferenceException using static properties"
+  },
+  {
+    "Id": 4845,
+    "Title": "SelectManyReadOnlyContinuousCollection needs to monitor changes made to child collections"
+  },
+  {
+    "Id": 5450,
+    "Title": "Can't compile 'Hello World - CLINQ Style'"
+  },
+  {
+    "Id": 5493,
+    "Title": "skiplisttest.cs missing"
+  },
+  {
+    "Id": 6292,
+    "Title": "Needed for Windows Phone 7 Series projects"
+  },
+  {
+    "Id": 6958,
+    "Title": "Using with .NET 4.0"
+  },
+  {
+    "Id": 6983,
+    "Title": "Collections of internal types"
+  },
+  {
+    "Id": 7003,
+    "Title": "Readding an item causes ArgumentException"
+  },
+  {
+    "Id": 7327,
+    "Title": "Possible Bug in ContinuousLinq 2's SubscriptionNode class"
+  },
+  {
+    "Id": 9271,
+    "Title": "Possible bug in ExpressionPropertyAnalyzer.AnalyzeLambda"
+  },
+  {
+    "Id": 10749,
+    "Title": ".Net version 4.5.1 isn't working with CLinq"
+  }
+]

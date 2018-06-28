@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "502601",
+    "ThreadId": "229692",
+    "Html": "<p>I would like to suggest that the extension methods which extend ObservableCollection, could be removed or relocated to a separate namespace. This would allow me to have continuous linq based statements in the same class as BCL System.Linq queries. As it stands, I'm not sure how to do this. Once I add &quot;using ContinuousLinq&quot;, all of my queries go through the Clinq extensions.</p>\r\n<p>Sometimes, I don't want things going through Clinq. One example is when an expression includes a lambda delegate. In this case, Clinq throws an exception indicating that it doesn't support lambdas.</p>\r\n<p>The AsReadOnly extension method could provide the &quot;opt in&quot;, allowing me to control which queries should be continuous and which should be standard queries.</p>\r\n<p>If the ObservableCollection extensions were removed, then users would need to add AsReadonly() to a query to get it to use CLINQ. If the extensions were moved to a separate namespace, then the user could still get the &quot;automatic&quot; behavior by including another using statement like &quot;using ContinuousLinq.Auto&quot; or something like that.</p>\r\n<p>Are there downsides or dangers to such a change? Maybe I'm missing something that resulted in the current design decisions.</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2010-10-05T10:01:17.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "512858",
+    "ThreadId": "229692",
+    "Html": "\r\n<p>One of the things I do is just cast your ObservableCollection to an IList&lt;T&gt;.\r\n<br>\r\n</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">var</span> collection = <span style=\"color:blue\">new</span> ObservableCollection&lt;<span style=\"color:blue\">string</span>&gt;();\r\n...\r\n<span style=\"color:blue\">var</span> find = ((IList&lt;<span style=\"color:blue\">string</span>&gt;)collection).Where(o =&gt; o.BeginsWith(<span style=\"color:#a31515\">&quot;Hello&quot;</span>)).OrderBy(o =&gt; o);\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2010-10-26T10:49:53.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "512893",
+    "ThreadId": "229692",
+    "Html": "<span style=\"font-family:Arial,Helvetica,sans-serif; font-size:10pt\">Thanks. That's a nice option. I'll give it a try.<br>\r\n<br>\r\n<div id=\"x_divSignature\"></div>\r\n<br>\r\n<br>\r\n</span><span style=\"font-size:10pt; font-family:tahoma,arial,sans-serif\">\r\n<hr size=\"2\" align=\"center\" width=\"100%\">\r\n<span><strong>From</strong>: \"ismell\" <notifications@codeplex.com><br>\r\n<strong>Sent</strong>: Tuesday, October 26, 2010 1:50 PM<br>\r\n<strong>To</strong>: nathan@alner.net<br>\r\n<strong>Subject</strong>: Re: Suggestion - Remove or Relocate extension methods that operate on ObservableCollection [clinq:229692]</span></span><br>\r\n<br>\r\n<p>From: ismell</p>\r\n<div id=\"x_ThreadNotificationPostBody\">\r\n<p>One of the things I do is just cast your ObservableCollection to an IList<T>.\r\n</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">var</span> collection = <span style=\"color:blue\">new</span> ObservableCollection<<span style=\"color:blue\">string</span>>();\r\n...\r\n<span style=\"color:blue\">var</span> find = ((IList<<span style=\"color:blue\">string</span>>)collection).Where(o => o.BeginsWith(<span style=\"color:#a31515\">\"Hello\"</span>)).OrderBy(o => o);\r\n</pre>\r\n</div>\r\n<p></p>\r\n</div>\r\n<div id=\"x_ThreadNotificationFooter\">\r\n<p>Read the <a href=\"http://clinq.codeplex.com/Thread/View.aspx?ThreadId=229692&ANCHOR#Post512858\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:clinq@discussions.codeplex.com?subject=[clinq:229692]\">clinq@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:clinq@discussions.codeplex.com\">\r\nclinq@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://clinq.codeplex.com/subscriptions/thread/project/edit\">unsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at codeplex.com</p>\r\n</div>\r\n",
+    "PostedDate": "2010-10-26T11:24:49.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "570077",
+    "ThreadId": "229692",
+    "Html": "<p>To me the cleanest option is not adding \"using ContinuousLinq\" and use it explicitly where you need it:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">public</span> ContinuousLinq.ReadOnlyContinuousCollection&lt;foo&gt; foos;\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2011-02-22T01:28:50.763-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

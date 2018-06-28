@@ -1,0 +1,118 @@
+[
+  {
+    "Id": "0",
+    "Name": "ContinuousLinq 2.2.0.0",
+    "DevelopmentStatus": "Stable",
+    "Description": "This is a pretty big release....\n!!!! Significant performance improvements\n* Weak event system overhaul\n* Implement INotifyPropertyChanging on the objects in your source collections to get most benefit.  However this is not required.  Only implementing INotifyPropertyChanged is still fine, but you will gain little performance improvement.\n\n!!!! Reactive Programming support:  ReactiveObject\n* Allows you to make a reactive and event driven object model for amazingly decoupled Models, ViewModels/Presenters.  \n* Founded on INotifyPropertyChanged/INotifyPropertyChanging rather than requiring the user to rely on first class events.\n* Highly optimized core that can observe changes on any object implementing INotifyPropertyChanged, and has extremely low overhead.\n* See [url:Andy Kutruff's blog post on ReactiveObject|http://kutruff.wordpress.com/2009/07/14/reactive-programming-in-c-reactiveobject/]\n* Batch update support:  If you use AddRange when adding to the source of query, it will reduce the amount of NotifyCollectionChanged events.  This is huge for query outputs that are bound to WPF ItemsControls as the UI will only need to update once.\n\n!!!! New operators\n* SelectMany: It actually works now and is super fast\n* GroupJoin: Great operator to help setup object relationships\n* Except\n* Concat\n!!!! Tweaks\n* ContinuousMax/Min support Nullable decimals",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2010-01-06T08:12:47.837-08:00",
+    "Files": [
+      {
+        "Id": "d54e635f-757e-48a1-8764-9d8db2a54583",
+        "FileName": "ContinuousLinq2.2.zip",
+        "Url": "./0/d54e635f-757e-48a1-8764-9d8db2a54583",
+        "Type": "Application",
+        "UploadDate": "2010-01-06T08:11:13.98-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "1",
+    "Name": "CLINQ v2.1.0.0",
+    "DevelopmentStatus": "Stable",
+    "Description": "CLINQ v2.1.0.0 is a maintenance release that entirely focuses on performance.\n\n    * Expression compilation caching - Expression<T>.Compile() is very slow and must be run every time a query is created.  (This is a standard for most LINQ libraries these days.)  For classes that are reused, queries were being recompiled each and every time these classes were instantiated.  Now, compiled code for expressions is cached, resulting in a 109x performance increase for open expressions, and an 8x performance increase for closures.  Added as an extension method to Expression<T> called CachedCompile().\n\n    * Added more generic Func delegates to System namespace - For some reason the .Net framework only supplies definitions of Func<T> up to Func<T1, T2, T3, T4, TResult>.  We now generate up to T20, which should give you plenty of breathing room for complicated queries.\n\n    * Added Partial() helper extension - Added helper methods for [url:Partial Function Application|http://blogs.msdn.com/wesdyer/archive/2007/01/29/currying-and-partial-function-application.aspx].\n\n    * Smart Property Notification (From 2.0.0.0) - In previous releases of CLINQ, the adapters would attach to the source collection and would trigger re-evaluatons every time any property on any object changed. In CLINQ v2, the only time we ever re-evaluate the CLINQ query is when a property that actually impacts the result set is changed. In other words, if you are filtering a result set on Age but the Name property keeps changing over and over again, we will no longer be wasting CPU cycles doing needless re-evaluations. ",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-06-01T08:14:09.037-07:00",
+    "Files": [
+      {
+        "Id": "fa8544f4-f795-4b0e-a068-07ff804c33ad",
+        "FileName": "ContinuousLinq v2.1.0.0.zip",
+        "Url": "./1/fa8544f4-f795-4b0e-a068-07ff804c33ad",
+        "Type": "Application",
+        "UploadDate": "2009-06-01T08:14:08.91-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "2",
+    "Name": "CLINQ v2.0.0.0",
+    "DevelopmentStatus": "Stable",
+    "Description": "CLINQ v2.0.0.0 is a major new release for CLINQ. In fact, much of it has been completely re-written from the ground up. The main focus of this release has been performance. Everything in CLINQ v2.0.0.0 is designed to run faster and eliminate redundancy.\n\nSome of the noteworthy [CLINQ v2.0 Features]:\n* *[Smart Property Notification]* - In previous releases of CLINQ, the adapters would attach to the source collection and would trigger re-evaluations every time any property on any object changed. In CLINQ v2, the only time we ever re-evaluate the CLINQ query is when a property that actually impacts the result set is changed. In other words, if you are filtering a result set on Age but the Name property keeps changing over and over again, we will no longer be wasting CPU cycles doing needless re-evaluations. ",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-03-13T10:00:49.41-07:00",
+    "Files": [
+      {
+        "Id": "72a06386-75ab-4638-a520-f70fc5afb0da",
+        "FileName": "CLINQv2.0.0.0.zip",
+        "Url": "./2/72a06386-75ab-4638-a520-f70fc5afb0da",
+        "Type": "Source Code",
+        "UploadDate": "2009-03-13T10:00:49.27-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "3",
+    "Name": "CLINQ v1.1.0.0",
+    "DevelopmentStatus": "None",
+    "Description": "This release of CLINQ contains both new features and incremental upgrades to existing functionality. The code has been cleaned up significantly as we've been trimming some of the needless fat from some of the library methods and classes.\n\nNew features include the ability to perform [Continuous Aggregation], which allows you to define a continuous query that,  instead of returning a set of results, returns a continuously updating continuous value such as a sum, min, max, average, or even standard deviation. \n\nWe have also created a new demo application for this version of CLINQ called \"Stock Monitor\", which simulates looking at ticker data for a particular stock. It shows not only how to do multiple continuous queries based on a single source set, but also shows off the power of continuous aggregates, and even how to create a live, continuous line graph using WPF data binding and CLINQ aggregates!",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-05-02T09:58:08.327-07:00",
+    "Files": [
+      {
+        "Id": "3d6c7368-116d-428f-82c0-aafbbdc6230f",
+        "FileName": "CLINQv1.1.0.0.zip",
+        "Url": "./3/3d6c7368-116d-428f-82c0-aafbbdc6230f",
+        "Type": "Source Code",
+        "UploadDate": "2008-05-02T09:57:40.233-07:00"
+      },
+      {
+        "Id": "fd077e59-13b6-4c7a-8ee3-47fad02a8188",
+        "FileName": "StockMonitorDemo.zip",
+        "Url": "./3/fd077e59-13b6-4c7a-8ee3-47fad02a8188",
+        "Type": "Example",
+        "UploadDate": "2008-05-02T09:57:40.25-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "4",
+    "Name": "CLINQ v1.0.0.0",
+    "DevelopmentStatus": "None",
+    "Description": "This is the first initial release of CLINQ. CLINQ is an ongoing project and so there will obviously be things that need to be optimized in future releases. This release corresponds to the material discussed in the .NET Addict's blog as well as the recently published Dr. Dobb's Journal article on CLINQ.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-01-09T11:44:46.86-08:00",
+    "Files": [
+      {
+        "Id": "5026775d-79dd-4223-ac18-bbdfe07c5209",
+        "FileName": "ContinuousLinqv1.0.0.0lib.zip",
+        "Url": "./4/5026775d-79dd-4223-ac18-bbdfe07c5209",
+        "Type": "Source Code",
+        "UploadDate": "2008-01-08T08:40:06.413-08:00"
+      },
+      {
+        "Id": "1886dd98-5c1c-4767-8095-0828c14f5492",
+        "FileName": "NetworkFilteringDemo.zip",
+        "Url": "./4/1886dd98-5c1c-4767-8095-0828c14f5492",
+        "Type": "Example",
+        "UploadDate": "2008-01-09T11:44:48.957-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "5",
+    "Name": "CLINQ 2.2.0.1",
+    "DevelopmentStatus": "Stable",
+    "Description": "Small update to fix bug in SelectMany",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2010-02-05T06:30:38.057-08:00",
+    "Files": [
+      {
+        "Id": "ea856d0d-029c-41f7-8af2-4274e45c342e",
+        "FileName": "CLINQ2.2.0.1.zip",
+        "Url": "./5/ea856d0d-029c-41f7-8af2-4274e45c342e",
+        "Type": "Application",
+        "UploadDate": "2010-02-05T06:30:37.837-08:00"
+      }
+    ]
+  }
+]

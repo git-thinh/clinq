@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "554877",
+    "ThreadId": "243179",
+    "Html": "\r\n<p>hello,</p>\r\n<p>none of the projects that come with clinq will open in vs 2010 ultimate or vs 2008 express, neither .net f 3.5, nor .net f 4 (that's what i've got so far). (and those are no tiny projects to build from scratch). i'm still waitin' for my vs 2008 professional\r\n kit to download. will that version of vs do the trick? or do you have other suggestions i might try?</p>\r\n<p>&nbsp;</p>\r\n<p>thank you</p>\r\n",
+    "PostedDate": "2011-01-25T01:30:23.903-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "555971",
+    "ThreadId": "243179",
+    "Html": "\r\n<p>Not sure what problems you're having but I had no difficulty in opening and upgrading the project to .net 4.0 in VS 2010 Ultimate</p>\r\n",
+    "PostedDate": "2011-01-26T17:49:17.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

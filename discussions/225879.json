@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "488528",
+    "ThreadId": "225879",
+    "Html": "<p>Is there a way to have a single ReadOnlyContinuousCollection generated from multiple aggregated source collections? I'm looking for something similiar to the Union LINQ operation/extension-method.</p>\r\n<p>For example:</p>\r\n<pre>var a = new ObservableCollection&lt;string&gt; { &quot;a&quot;, &quot;b&quot;, &quot;c&quot; };\r\nvar b = new ObservableCollection&lt;string&gt; { &quot;d&quot;, &quot;e&quot;, &quot;f&quot; };\r\nReadOnlyContinuousCollection&lt;string&gt; c = a.Union(b);</pre>\r\n<p>Where the&nbsp;contents of 'c' would be &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;.</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-09-02T15:14:02.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "488536",
+    "ThreadId": "225879",
+    "Html": "<p>I've used a SelectMany operator to combine multiple collections together like this. It works similarly to the Union operator.</p>\r\n<p>If you need to get distinct values, as a typical Union would do, then you can use the Distinct operator to do that.</p>\r\n<p>- Nathan</p>",
+    "PostedDate": "2010-09-02T15:32:40.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "493982",
+    "ThreadId": "225879",
+    "Html": "<p>Yeah, Its .Concat()</p>",
+    "PostedDate": "2010-09-15T10:53:47.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

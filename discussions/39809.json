@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "132119",
+    "ThreadId": "39809",
+    "Html": "I've got a while till I need to deliver my product, so I can live with alpha for a while.&nbsp; Do you have any estimates on how long until 2.0 comes out?<br>\r\n<br>\r\nI'd like to get started with the new goodies rather and deal with a little pain rather than use the old and boring :)<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-12T14:14:33.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "132261",
+    "ThreadId": "39809",
+    "Html": "We hope to have a release of 2.0 sometime within the next month.",
+    "PostedDate": "2008-11-13T04:35:51.487-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "167828",
+    "ThreadId": "39809",
+    "Html": "Also, rest assured.&nbsp; Every check-in to CLINQ 2.0 is being used in a real world product with a huge unit test suite.&nbsp; The major release will likely just signify that we aren't adding any features for a while, rather than stabilizing. It's always stable.&nbsp; <br>\r\n",
+    "PostedDate": "2009-03-13T10:38:42.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

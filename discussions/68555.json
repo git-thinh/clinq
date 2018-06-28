@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "233219",
+    "ThreadId": "68555",
+    "Html": "<p>It seems like all these Continuous LINQ like projects seem to be so focused on WPF, what about WinForms support and IBindingList and IBindingListView? I'm not fortunate enough to be working on a project which is WPF and I'd like to be able to have the features you provide but also have it work with WinForms databinding. Do you have any sugesstions? BindableLinq does have WinForms support but it seems like that project is pretty much dead (unfortunately) and maybe my thinking cap isn't working so Obtics seems to heavy for me to implement or explain to co-workers. CLinq seemed easy enough to enter but&nbsp;what about lists that don't support&nbsp;INotifyCollectionChanged?</p>\r\n<p>Has anyone found a viable bridge, maybe an adapter for converting these classic kinds of lists to the ones supported by CLinq?</p>\r\n<p>Sorry for rambling, but I've looked at a few of these projects and am starting to think I'll have to roll my own in order to get the support I need.</p>",
+    "PostedDate": "2009-09-10T10:38:12.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

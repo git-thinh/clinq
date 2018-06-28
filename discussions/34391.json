@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "114165",
+    "ThreadId": "34391",
+    "Html": "How difficult, far off, do-able is join support?<br>\r\n<br>\r\nWill you accept tested contributions if it is doable, but far off?<br>\r\n",
+    "PostedDate": "2008-08-27T09:09:11.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114216",
+    "ThreadId": "34391",
+    "Html": "Once we get done with the smart adapters and all the other fantastic goodies we've got planned for 2.0, then we'll start looking at new query operator syntax to support. We'll have to see how much work it'll be to implement continuous joins.<br>\r\n",
+    "PostedDate": "2008-08-27T11:51:13.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "464288",
+    "ThreadId": "218608",
+    "Html": "<p>I'm wondering if it is reasonable and/or possible to structure the Reactive object logic so that it doesn't require that I derive from ReactiveObject. In some cases, I already have a base class in play. Is it possible to use another pattern (containment, etc) but still register the subscriptions? Is there a reason that you chose inheritance?</p>\r\n<p>BTW, great work! I really like the project.</p>\r\n<p>Thanks,</p>\r\n<p>Nathan Allen-Wagner</p>",
+    "PostedDate": "2010-07-07T07:32:46.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

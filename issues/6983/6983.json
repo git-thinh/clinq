@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Change 46495 breaks using continuous linq on some collections containing internal types with a TypeLoadException at DynamicProperty.GetValue.  Changing the DynamicMethod construction back fixes this issue.\nFixed (older) code below:\n                DynamicMethod dynamicMethod = new DynamicMethod(\n                    string.Empty,\n                    typeof(object),\n                    new[] { typeof(object) },\n                    _property.Module,\n                    true);",
+    "LastUpdatedDate": "2013-02-14T11:18:58.02-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "clinq",
+    "ReportedDate": "2010-07-13T08:53:14.483-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Collections of internal types",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 6983
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "It appears this old code doesn't work in Silverlight.  Please consider adding this to the sections that need #if for each platform.",
+      "PostedDate": "2010-07-13T09:08:45.81-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-14T11:18:58.02-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

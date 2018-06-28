@@ -1,0 +1,7 @@
+C:\_CS\clinq\sourceCode\ContinuousLinq2\SilverlightTest.Web\bin\SilverlightTest.Web.dll.config
+C:\_CS\clinq\sourceCode\ContinuousLinq2\SilverlightTest.Web\bin\SilverlightTest.Web.dll
+C:\_CS\clinq\sourceCode\ContinuousLinq2\SilverlightTest.Web\bin\SilverlightTest.Web.pdb
+C:\_CS\clinq\sourceCode\ContinuousLinq2\SilverlightTest.Web\obj\Debug\SilverlightTest.Web.csprojResolveAssemblyReference.cache
+C:\_CS\clinq\sourceCode\ContinuousLinq2\SilverlightTest.Web\obj\Debug\SilverlightTest.Web.csproj.CoreCompileInputs.cache
+C:\_CS\clinq\sourceCode\ContinuousLinq2\SilverlightTest.Web\obj\Debug\SilverlightTest.Web.dll
+C:\_CS\clinq\sourceCode\ContinuousLinq2\SilverlightTest.Web\obj\Debug\SilverlightTest.Web.pdb

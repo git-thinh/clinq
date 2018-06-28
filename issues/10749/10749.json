@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm getting lots of errors when I get the dll from here, this is because the dll is on .net 3.5.  I tried getting the source code and putting it to .net 4.5.1, but that didn't work because the source code is older code.\n\nWhat I would propose is making a .net 4.5.1 dll, or updateing the source code (probably a better idea).\n\nThanks!!",
+    "LastUpdatedDate": "2014-10-17T06:02:41.103-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "clinq",
+    "ReportedDate": "2014-10-17T06:02:41.103-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": ".Net version 4.5.1 isn't working with CLinq",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 10749
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

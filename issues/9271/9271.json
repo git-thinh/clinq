@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The for-loop in the ExpressionPropertyAnalyzer.AnalyzeLambda lambda method looks suspicious to me:\n \n            for (int i = 0; i < expression.Parameters.Count; i++)\n            {\n                ParameterExpression parameterExpression = expression.Parameters[0];\n                tree.Children.Add(new ParameterNode(parameterExpression.Type, parameterExpression.Name));\n            }\n \nShouldn't the line\n \n                ParameterExpression parameterExpression = expression.Parameters[0];\n \nbe changed to:\n \n                ParameterExpression parameterExpression = expression.Parameters[i];",
+    "LastUpdatedDate": "2013-02-14T11:18:56.977-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "clinq",
+    "ReportedDate": "2012-03-30T00:09:29.12-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Possible bug in ExpressionPropertyAnalyzer.AnalyzeLambda",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 9271
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

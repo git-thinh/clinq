@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "406573",
+    "ThreadId": "198069",
+    "Html": "<p>Thanks for creating this library; it has been very useful.</p>\r\n<p>I have&nbsp;some feedback&nbsp;regarding your support of the GroupBy method. We have some tricky grouping logic that we would like to implement, and the most direct way to do this was to actually implement a custom IEqualityComparer&lt;T&gt; for our data type.</p>\r\n<p>Our&nbsp;LINQ query looked like the following then (data is a ContinuousCollection&lt;T&gt;):</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">var</span> query = data.\r\n            GroupBy(o =&gt; o, o =&gt; o, <span style=\"color:Blue\">new</span> MyDataGroupingComparer()).\r\n            Select((grp, key) =&gt; <span style=\"color:Blue\">new</span> DataGroup() {ListId = grp.Key.ListId, Data = grp});\r\n\r\n</pre>\r\n</div>\r\n<p>The query itself executed fine but binding it to WPF did not. I think this is because the resulting query type is:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>System.Linq.Enumerable+&lt;SelectIterator&gt;d__7&lt;System.Linq.IGrouping&lt;Data,Data&gt;,DataGroup&gt;</pre>\r\n</div>\r\n<p>However, if the group by is done using the linq keywords, the resulting query type is:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>ContinuousLinq.SelectReadOnlyContinuousCollection&lt;ContinuousLinq.Collections.GroupedReadOnlyContinuousCollection&lt;System.Nullable&lt;System.Int32&gt;,Data&gt;,DataGroup&gt;</pre>\r\n</div>\r\n<p>In other words, the GroupBy(...) syntax did not produce a collection that implements INotifyCollectionChanged. Is this kind of syntax not supported? <br><br>We were able to get around this using some other techniques, but I'd appreciate any feedback on this.</p>\r\n<p>Thanks<br>- Szymon</p>",
+    "PostedDate": "2010-02-25T13:09:43.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

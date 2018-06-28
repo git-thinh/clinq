@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "422333",
+    "ThreadId": "206945",
+    "Html": "<p>I am trying to figure out how to use CLINQ with WCF Ria Services' EntityCollection. &nbsp;This is the signature for an EntityCollection:</p>\r\n<p>EntityCollection&lt;TEntity&gt; : IEnumerable&lt;TEntity&gt;, IEnumerable, INotifyCollectionChanged, INotifyPropertyChanged where TEntity : global::System.ServiceModel.DomainServices.Client.Entity</p>\r\n<p>Where an Entity has the signature:</p>\r\n<p>Entity : INotifyDataErrorInfo, IEditableObject, INotifyPropertyChanged, IRevertibleChangeTracking, IChangeTracking</p>\r\n<p>From my limited experience, it seems like i have to convert my entitycollection into an observablecollection. &nbsp;If I have to do this, then I would have to make additions to the entitycollection (to allow for persistence) and the derived observable collection (so that continuouscollections can reflect the collection changes). &nbsp;Am I missing something, or is there a way to get a ContinuousCollection working on an underlying collection that supports INotifyCollectionChanged?</p>\r\n<p>Thanks,</p>\r\n<p>Sam</p>",
+    "PostedDate": "2010-03-22T17:04:39.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "842065",
+    "ThreadId": "357493",
+    "Html": "\r\n<p>I'm seeing some bad looking behavior in GroupJoin.</p>\r\n<p>In the constructor, there is:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _outerReferenceTracker = new ReferenceCountTracker&lt;TOuter&gt;(outer);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RebuildAll();</p>\r\n<p>If the 'outer' list is non-empty, the first line fill _outerReferenceTracker. Then, RebuildAll re-adds everything in _outer. It does not clear _outerReferenceTracker first. The end result is that every item has a reference count of 2.</p>\r\n<p>An unrelated problem is in RemoveOuter, where there's the line:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;OuterEntry&gt; outersMatchingKey = _keyToOuterLookup[outerEntry.Key];</p>\r\n<p>It appears to me that _keyToOuterLookup is not being updated when an outer item's key changes. I encountered this when I changed the key of an outer item, and later Removed that outer item. RemoveOuter tries to find the key in _keyToOuterLookup, it's not\r\n there, and an exception is thrown.</p>\r\n<p>Even if someone's code doesn't encounter this exception, the fact that items have an extra reference count and key changes are not tracked leads to _outerReferenceTracker and _keyToOuterLookup containing no-longer-used information.</p>\r\n",
+    "PostedDate": "2012-05-29T06:59:04.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

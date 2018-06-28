@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "578510",
+    "ThreadId": "249202",
+    "Html": "\r\n<p>I'm upgrading my project to .NET 4.0 and, while CLINQ appears to run, it triggers warnings that &quot;The predefined type 'System.Action' is defined in multiple assemblies in the global alias; using definition from 'c:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Core.dll'&quot;</p>\r\n<p>I believe this is caused by ContinuousLinq's references to 3.5's System.Action conflicting with the rest of my project's references to the 4.0 version.</p>\r\n<p>I tried recompiling ContinuousLinq for 4.0, but that caused a runtime exception in SmartFilterAdapter that I don't know how to solve.</p>\r\n<p>Are there any plans to recompile and validate CLINQ for .NET 4.0?</p>\r\n<p>Thanks,</p>\r\n<p>&nbsp;&nbsp; Bob</p>\r\n",
+    "PostedDate": "2011-03-10T09:13:39.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578552",
+    "ThreadId": "249202",
+    "Html": "<p>I too would like to see this happen. We are using this in a .NET 4.0 project, so we ended up making the necessary source changes ourselves.</p>\r\n<p>For the System.Action issue, we changed the Curry.tt file so that it didn't generate as many variations of the System.Action delegates. I think that was the only thing we had to do to get it compiling under .NET 4.0.</p>\r\n<p>We've made a couple other tweaks here and there too. I'd prefer not to do so, but there hasn't been a lot of response from the project contributors so far. I'm hoping they are still keeping an eye on this project. If not, maybe the community could pick it up.</p>\r\n<p>- Nathan</p>",
+    "PostedDate": "2011-03-10T10:20:33.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "900906",
+    "ThreadId": "249202",
+    "Html": "<p>Just change Curry.tt so that the for loops start at 17 (because .Net 4 already has the first 16 definitions)&nbsp;</p>\r\n<div id=\"_mcePaste\" class=\"mcePaste\" style=\"position: absolute; width: 1px; height: 1px; overflow: hidden; top: 0px; left: -10000px;\">﻿</div>\r\n<p>namespace System<br />{<br />&nbsp;&lt;#for(int i=17;i&lt;=20;i++){#&gt;public delegate TResult Func&lt;T1, T2, T3, T4, &lt;#FormatRange(\"T{0}, \", 5, i); #&gt;TResult&gt;(&lt;#FormatRange(\"T{0} t{0}\", \", \", 1, i);#&gt;);<br />&nbsp;&lt;#}#&gt;</p>\r\n<p>&nbsp;&lt;#for(int i=17;i&lt;=20;i++){#&gt;public delegate void Action&lt;T1, T2, T3, T4, &lt;#FormatRange(\"T{0}\", \", \", 5, i); #&gt;&gt;(&lt;#FormatRange(\"T{0} t{0}\", \", \", 1, i);#&gt;);<br />&nbsp;&lt;#}#&gt;<br />}</p>",
+    "PostedDate": "2012-08-17T15:31:58.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "976746",
+    "ThreadId": "249202",
+    "Html": "\r\n<p>I can tell that nsulikow's answer solves those warning issues. Good job man.</p>\r\n",
+    "PostedDate": "2012-12-26T08:41:02.12-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

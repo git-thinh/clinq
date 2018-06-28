@@ -1,0 +1,11 @@
+<div class="wikidoc"><h1>Continuous Aggregation</h1>
+Continuous Aggregation is the act of taking a continuous collection, or any other ObservableCollection, for that matter, and continuously updating a scalar value that is some kind of aggregation of that collection. For example, let&#39;s say you have a collection of Customers and you want to have a value on your WPF GUI that is a constantly updating number showing the sum of the customer ages. It could also be more complicated and show the sum total of all orders purchased by a subset of customers. The possibilities are endless.<br /><br />The first thing you would do is create your continuous collection, potentially by using a CLINQ query over an observable collection, as shown below:<br /><pre>
+customersOverThirty = from cust in AllCustomers
+                        where cust.Age &gt; 30
+                        select cust;
+</pre><br /><br />Then you create your continuous value object and invoke one of the aggregation extensions, such as ContinuousSum:<br /><pre>
+ContinuousValue&lt;int&gt; totalAge = customersOverThirty.ContinuousSum&lt;Customer&gt;(c =&gt; c.Age);
+</pre><br /><br />If you want to get really fancy, you can even nest/chain continuous aggregations together, as shown here:<br /><pre>
+ContinuousValue&lt;double&gt; totalPrice = customersOverThirty.ContinuousSum&lt;Customer&gt;(
+    c =&gt; c.Orders.ContinuousSum&lt;Order&gt;( o =&gt; o.Price ));
+</pre><br /><br />Now you can safely place this continuous value in your model object, a model singleton, or the datacontext of a WPF window and the WPF GUI will automatically be made aware of the changes to that scalar value!<br /><br />Click here to see how you can <a href="https://clinq.codeplex.com/wikipage?title=Create%20Your%20Own%20Continuous%20Aggregate&referringTitle=Continuous%20Aggregation">Create Your Own Continuous Aggregate</a>.<br /><br />Continuous Aggregation should be available in the 1.1.0.0 release - <a href="https://clinq.codeplex.com/releases/view/12569">CLINQ v1.1.0.0</a></div><div class="ClearBoth"></div>

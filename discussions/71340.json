@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "243312",
+    "ThreadId": "71340",
+    "Html": "<p>Hello,</p>\r\n<p>In the meantime i have made a view experiences with CLINQ and i find its a really usefull Library.</p>\r\n<p>But i have wondered how a OrderedReadOnlyContinuousCollection is handling a resorting. If the Sort-Property-Key for one item is changing this Collection dont move it to the right Position. Instead it removes the Item from the Collection and is adding it again with 2 Collection-Changed-Events. Because of that my ListBox is always loosing its SelectedIndex even if the sortorder isnt really changing.</p>\r\n<p>Are you planning to fix this strange behaviour in the future?</p>",
+    "PostedDate": "2009-10-08T01:21:20.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247353",
+    "ThreadId": "71340",
+    "Html": "<p>Hi Lector,</p>\r\n<p>I'll take a look at Ordering changes as soon as I can.&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Andy</p>",
+    "PostedDate": "2009-10-19T09:50:53.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

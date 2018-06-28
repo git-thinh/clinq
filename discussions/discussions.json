@@ -1,0 +1,207 @@
+[
+  {
+    "Id": "20139",
+    "Title": "Samples?",
+    "LatestDate": "2008-01-09T11:50:04.12-08:00"
+  },
+  {
+    "Id": "20192",
+    "Title": "IEquatable<T> Requirement Removed",
+    "LatestDate": "2008-01-09T12:16:16.333-08:00"
+  },
+  {
+    "Id": "22822",
+    "Title": "Modifyable Filter Conditions",
+    "LatestDate": "2010-08-02T11:15:12.653-07:00"
+  },
+  {
+    "Id": "23563",
+    "Title": "CLinq with databases",
+    "LatestDate": "2008-03-07T07:14:03.197-08:00"
+  },
+  {
+    "Id": "24389",
+    "Title": "Continous LINQ for a dynamic number of ContinuousCollection",
+    "LatestDate": "2008-04-14T12:25:49.05-07:00"
+  },
+  {
+    "Id": "34294",
+    "Title": "Error in SmartFilterAdapter, ExpressionPropertyAnalyzer",
+    "LatestDate": "2008-09-16T14:00:56.913-07:00"
+  },
+  {
+    "Id": "34391",
+    "Title": "How difficult, far off, do-able is join support?",
+    "LatestDate": "2008-08-27T11:51:13.67-07:00"
+  },
+  {
+    "Id": "37812",
+    "Title": "CLINQ and Silverlight 2.0",
+    "LatestDate": "2009-03-13T10:26:34.27-07:00"
+  },
+  {
+    "Id": "39809",
+    "Title": "2.0 eta",
+    "LatestDate": "2009-03-13T10:38:42.873-07:00"
+  },
+  {
+    "Id": "40867",
+    "Title": "Need to query any IList that impl's INotifyCollectionChanged",
+    "LatestDate": "2009-07-24T07:29:49.197-07:00"
+  },
+  {
+    "Id": "50219",
+    "Title": "Silverlight",
+    "LatestDate": "2009-03-16T07:33:10.627-07:00"
+  },
+  {
+    "Id": "50556",
+    "Title": "Group & Sum with CLINQ",
+    "LatestDate": "2009-03-18T11:35:00.763-07:00"
+  },
+  {
+    "Id": "63446",
+    "Title": "Why require INotifyPropertyChanged",
+    "LatestDate": "2009-07-24T07:34:09.59-07:00"
+  },
+  {
+    "Id": "67619",
+    "Title": "Sort order ",
+    "LatestDate": "2009-10-05T06:28:08.197-07:00"
+  },
+  {
+    "Id": "68555",
+    "Title": "Winforms Support?",
+    "LatestDate": "2009-09-10T10:38:12.19-07:00"
+  },
+  {
+    "Id": "69182",
+    "Title": "Things I've had to hack",
+    "LatestDate": "2009-09-16T18:02:11.667-07:00"
+  },
+  {
+    "Id": "71340",
+    "Title": "CollectionChanged-Notification on Resorting",
+    "LatestDate": "2009-10-19T09:50:53.33-07:00"
+  },
+  {
+    "Id": "76230",
+    "Title": "INotifyPropertyChanging",
+    "LatestDate": "2009-12-15T08:46:48.497-08:00"
+  },
+  {
+    "Id": "77672",
+    "Title": "XmlIgnore for SuppressPropertyChanged & Dispatcher",
+    "LatestDate": "2009-12-09T21:29:10.173-08:00"
+  },
+  {
+    "Id": "79993",
+    "Title": "multi-thread friendliness",
+    "LatestDate": "2010-05-10T08:57:08.01-07:00"
+  },
+  {
+    "Id": "83769",
+    "Title": "Where() on Items that dont implement INotifyPropertyChanged",
+    "LatestDate": "2011-02-21T14:28:27.093-08:00"
+  },
+  {
+    "Id": "84902",
+    "Title": "ContinuousAny",
+    "LatestDate": "2010-02-11T07:56:18.91-08:00"
+  },
+  {
+    "Id": "198069",
+    "Title": "CLinq GroupBy(...) support",
+    "LatestDate": "2010-02-25T13:09:43.963-08:00"
+  },
+  {
+    "Id": "206945",
+    "Title": "CLINQ Support on RIA Services EntityCollection?",
+    "LatestDate": "2010-03-22T17:04:39.277-07:00"
+  },
+  {
+    "Id": "212455",
+    "Title": "Reactive Extensions - overlap with clinq, what are the differences?",
+    "LatestDate": "2010-07-07T07:28:48.693-07:00"
+  },
+  {
+    "Id": "218608",
+    "Title": "Reactive without inheritance?",
+    "LatestDate": "2010-07-07T07:32:46.32-07:00"
+  },
+  {
+    "Id": "218627",
+    "Title": "For ReactiveObjects, make sure ALL objects in your expressions implement INotifyPropertyChanged",
+    "LatestDate": "2010-07-07T09:47:05.053-07:00"
+  },
+  {
+    "Id": "225234",
+    "Title": "Choose when to use CLinq?",
+    "LatestDate": "2010-08-30T07:15:16.553-07:00"
+  },
+  {
+    "Id": "225879",
+    "Title": "ReadOnlyContinuousCollection from multiple source collections",
+    "LatestDate": "2010-09-15T10:53:47.06-07:00"
+  },
+  {
+    "Id": "227169",
+    "Title": "Lazy or deferred population?",
+    "LatestDate": "2010-09-16T07:40:20.493-07:00"
+  },
+  {
+    "Id": "228392",
+    "Title": "ContinuousAny and ContinuousAll",
+    "LatestDate": "2010-09-23T15:12:31.537-07:00"
+  },
+  {
+    "Id": "229692",
+    "Title": "Suggestion - Remove or Relocate extension methods that operate on ObservableCollection",
+    "LatestDate": "2011-02-22T01:28:50.763-08:00"
+  },
+  {
+    "Id": "243179",
+    "Title": "vs version",
+    "LatestDate": "2011-01-26T17:49:17.933-08:00"
+  },
+  {
+    "Id": "249202",
+    "Title": "CLINQ for .NET 4.0",
+    "LatestDate": "2012-12-26T08:41:02.12-08:00"
+  },
+  {
+    "Id": "269975",
+    "Title": "Inserts into a collection are registered as add",
+    "LatestDate": "2011-08-22T09:20:19.667-07:00"
+  },
+  {
+    "Id": "273071",
+    "Title": "WeakPropertyBridge.CheckForUnsubscribe",
+    "LatestDate": "2011-09-19T07:20:10.7-07:00"
+  },
+  {
+    "Id": "273641",
+    "Title": "Veteran C# .NET LINQ newbie C++/CLI CLINQ",
+    "LatestDate": "2011-09-23T11:03:31.08-07:00"
+  },
+  {
+    "Id": "353599",
+    "Title": "Bug in ClearSubscriptions?",
+    "LatestDate": "2012-04-25T12:10:28.347-07:00"
+  },
+  {
+    "Id": "356131",
+    "Title": "SortingReadOnlyContinuousCollection - ItemChanged",
+    "LatestDate": "2012-05-17T02:25:25.22-07:00"
+  },
+  {
+    "Id": "357493",
+    "Title": "GroupJoin bugs?",
+    "LatestDate": "2012-05-29T06:59:04.557-07:00"
+  },
+  {
+    "Id": "392079",
+    "Title": "Another GroupJoin bug",
+    "LatestDate": "2012-08-17T12:33:55.183-07:00"
+  }
+]

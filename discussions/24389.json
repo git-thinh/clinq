@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "81802",
+    "ThreadId": "24389",
+    "Html": "\r\nImagine I have three timeseries. Is it possible to have a ContinuousCollection of these three time series so that if any of them update, I get a callback?<br /><br />Then, is it possible to generalize this to n timeseries where the timeseries may be added at runtime?<br /><br />An example of why I need this is the following. I have a universe of 2500 stocks. At any given time, I may have a position in any portfolio combination of 2500 of them. Say that stock 1 is long and stock 10 is short. Stock 1 and stock 10  have realtime ticks that are continously arriving from the data feed, and are added  to the ContinuousCollection.  I would like to do a correlation on these two stocks in realtime. Now, at some time t+n later, I fill another stock. Now I want to find the correlations of all these stocks against each  other, but I need the ContinuousCollection to know about the third stock at runtime...<br /><br />I am not sure if I am being clear. The idea is that you have a variable number of ContinuousCollection&lt;T&gt; , where T can be any number of time series. Maybe a ContinuousCollection&lt;ContinuousCollection&lt;T&gt;&gt;  ??<br />",
+    "PostedDate": "2008-03-19T23:12:28.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "86752",
+    "ThreadId": "24389",
+    "Html": "\r\nA ContinuousCollection&lt;ContinuousCollection&lt;T&gt;&gt; is certainly possible. However, note that just by simply nesting continuous collections you don't automatically gain the \"listening adapter\" behavior that makes those things continuous - that only comes from actually writing a query which invokes the CLINQ extensions to LINQ.<br /><br />We don't currently support joining continuous collections, but that's something that we're looking at in the future. What you could do in the meantime is create your 3 or 4 continuous collections (which could actually be the results of 3 or 4 different CLINQ queries) and then manually monitor the CollectionChanged event on those collections, propagate those changes to a single master collection and then write a query against the single master collection.<br /><br />Sounds a little kludgy, but as we focused on the core functionality first, stuff like joining and scalar aggregates and so on just haven't been messed with much.<br />",
+    "PostedDate": "2008-04-14T12:25:49.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

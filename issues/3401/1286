@@ -1,0 +1,104 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NUnit.Framework;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+
+namespace ContinuousLinq.UnitTests
+{
+    [TestFixture]
+    public class SelectManyReadOnlyContinuousCollectionTest
+    {
+       private ReadOnlyContinuousCollection<Person> _target;
+
+        ObservableCollection<ObservableCollection<Person>> _sources;
+
+        [SetUp]
+        public void Setup()
+        {
+           _sources = new ObservableCollection<ObservableCollection<Person>>();
+           _sources.Add(ClinqTestFactory.CreateTwoPersonSource());
+           _sources.Add(ClinqTestFactory.CreateSixPersonSource());
+           _target = _sources.SelectMany(src => src).Where(person => person.Age <= 20);
+        }
+
+        [Test]
+        public void IndexerGet_ItemsInSource_ItemsMatchSelection()
+        {
+            Assert.AreEqual("Bob", _target[0].Name);
+            Assert.AreEqual("Jim", _target[1].Name);
+            Assert.AreEqual("0", _target[2].Name);
+            Assert.AreEqual("1", _target[3].Name);
+        }
+
+        [Test]
+        public void AddItemToSource_Always_FireCollectionChangedEvent()
+        {
+            Person newPerson = new Person() { Name = "NewPerson", Age=5 };
+            int callCount = 0;
+            _target.CollectionChanged += (sender, args) =>
+            {
+                callCount++;
+                Console.WriteLine("howdy from add");
+                Assert.AreEqual(NotifyCollectionChangedAction.Add, args.Action);
+                Assert.AreEqual(2, args.NewStartingIndex);
+                Assert.AreEqual("NewPerson", args.NewItems[0]);
+            };
+
+            _sources[0].Add(newPerson);
+            Assert.AreEqual(1, callCount);
+        }
+
+        [Test]
+        public void RemoveItemFromSource_Always_FireCollectionChangedEvent()
+        {
+            Person personToRemove = _sources[0][0];
+            int callCount = 0;
+            _target.CollectionChanged += (sender, args) =>
+            {
+               Console.WriteLine("howdy from remove");
+                callCount++;
+                Assert.AreEqual(NotifyCollectionChangedAction.Remove, args.Action);
+                Assert.AreEqual(0, args.OldStartingIndex);
+                Assert.AreEqual("Bob", args.OldItems[0]);
+            };
+
+            _sources[0].Remove(personToRemove);
+            Assert.AreEqual(1, callCount);
+        }
+
+        [Test]
+        public void ChangeMonitoredPropertyOnItemInSource_Always_FireCollectionChangedEvent()
+        {
+           int callCount = 0;
+           _target.CollectionChanged += (sender, args) =>
+           {
+              callCount++;
+              Console.WriteLine("howdy from change");
+              Assert.AreEqual(NotifyCollectionChangedAction.Remove, args.Action);
+              Assert.AreEqual(-1, args.NewStartingIndex);
+              Assert.AreEqual(0, args.OldStartingIndex);
+           };
+
+           _sources[0][0].Age = 55;
+           Assert.AreEqual(1, callCount);
+        }
+
+        [Test]
+        public void ChangeUnMonitoredPropertyOnItemInSource_Never_FireCollectionChangedEvent()
+        {
+           int callCount = 0;
+           _target.CollectionChanged += (sender, args) =>
+           {
+              callCount++;
+           };
+
+           _sources[0][0].Name = "DifferentName";
+           Assert.AreEqual(0, callCount);
+        }
+    }
+
+
+}

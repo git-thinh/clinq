@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "289606",
+    "ThreadId": "84902",
+    "Html": "<p>Hi there,</p>\r\n<p>Is there a support for something like ContinuousAny?</p>\r\n<p>I have an ContinuousCollection&lt;Order&gt;, and the Order object has a property &quot;ContinuousCollection&lt;Shipment&gt; Shipments { get; }&quot;</p>\r\n<p>I want to be notified about changes in shipments.</p>\r\n<p>E.g., the following is not working:</p>\r\n<p><span style=\"white-space:pre\"> </span>orderAlerts = from o in orders where o.Shipments.<strong>ContinuousAny</strong>(ShipmentCheck) select o;</p>\r\n<p>&nbsp;</p>\r\n<p>where:</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;private bool&nbsp;ShipmentCheck(Shipment s)</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{<br>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return s.Status == ShipmentStatus.Shipped;<br>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-11T07:56:18.91-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

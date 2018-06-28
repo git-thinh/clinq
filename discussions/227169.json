@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "493288",
+    "ThreadId": "227169",
+    "Html": "<p>When implementing a tree view in WPF, I commonly put a dummy, null, entry in the ObservableCollection&lt;T&gt; of children. This causes the tree view to display the [+] expander, and then I handle the expansion event (by binding IsExpanded) by &quot;realizing&quot; the actual content -- i.e. removing the null entry and going to the database/service/whatever.</p>\r\n<p>This means that I've got, in my viewmodel object's constructor.</p>\r\n<p>_children = _model.Children.Where(predicate).Select(m =&gt; new TreeNodeViewModel(this, m, predicate));</p>\r\n<p>_children.Add(null);</p>\r\n<p>Obviously, the call to Add throws AccessViolationException, because _children is actually a ReadOnlyContinuousCollection. Is there any way around this? For example, would it be feasible for me to write an extension such that:</p>\r\n<p>_children = _model.Children.Where(predicate).Select(m=&gt;etc).Lazy();</p>\r\n<p>...would work?</p>\r\n<p>Any other suggestions/ideas?</p>",
+    "PostedDate": "2010-09-14T06:20:35.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "493986",
+    "ThreadId": "227169",
+    "Html": "<p>How about instead of setting _children to a CLinq collection when initializing the object set it to an ObservableCollection with the &quot;null&quot; object. Then when IsExpanded is triggered update your _children to your CLinq query and throw a OnPropertyChanging/OnPropertyChanged for Children so the view rebinds.</p>",
+    "PostedDate": "2010-09-15T11:03:38.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "494484",
+    "ThreadId": "227169",
+    "Html": "<p>In the end, I did just that:</p>\r\n<p>&nbsp;</p>\r\n<p>1. Have a _children field and a Children property (that raises PropertyChanged).</p>\r\n<p>2. Have a static property called LoadingChildren that is an ObservableCollection containing a null.</p>\r\n<p>3. Initially set Children = LoadingChildren.</p>\r\n<p>4. Have a _realChildren field, set to _model.Children.Where(predicate).Select(m =&gt; etc).</p>\r\n<p>5. In the handler for set_IsExpanded(true), call _model.RealizeChildren() and set Children = _realChildren.</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-16T07:40:20.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

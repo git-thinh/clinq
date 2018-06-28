@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "168141",
+    "ThreadId": "50219",
+    "Html": "I just want to check the status on CLINQ running in Silverlight.<br>\r\n<br>\r\nIs it hard to get the code running in SL or is it because you are not working with SL?\r\n",
+    "PostedDate": "2009-03-14T14:55:13.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "168536",
+    "ThreadId": "50219",
+    "Html": "Up until recently this was simply because we weren't working on implementing the Silverlight version. We're currently looking into getting Silverlight to work (started looking at it on Friday, actually) but suffice it to say that it is a non-trivial problem and that there are a lot of little quirks involved. Silverlight is more than just a &quot;small XAML interpreter&quot; for the web... It's actually an entirely different CLR that happens to share a large portion of the same method signatures, namespaces, etc as the real .NET Framework. In theory, this makes it so that your code is highly portable between WPF and Silverlight... but the devil is in the details and there are a lot of them that prevent simple cross-compilation.<br>\r\n<br>\r\nWe will definitely keep people posted as the exploration into the Silverlight version continues.\r\n",
+    "PostedDate": "2009-03-16T07:33:10.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

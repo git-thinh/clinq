@@ -1,0 +1,9 @@
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\TransactionSender\bin\Debug\TransactionSender.exe.config
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\TransactionSender\bin\Debug\TransactionSender.exe
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\TransactionSender\bin\Debug\TransactionSender.pdb
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\TransactionSender\bin\Debug\NetworkLibrary.dll
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\TransactionSender\bin\Debug\NetworkLibrary.pdb
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\TransactionSender\obj\Debug\TransactionSender.csprojResolveAssemblyReference.cache
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\TransactionSender\obj\Debug\TransactionSender.csproj.CoreCompileInputs.cache
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\TransactionSender\obj\Debug\TransactionSender.exe
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\TransactionSender\obj\Debug\TransactionSender.pdb

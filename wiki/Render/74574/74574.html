@@ -1,0 +1,58 @@
+<div class="wikidoc"><h1>Hello World - CLINQ Style</h1>
+Before rigging CLINQ queries up to a data bound GUI such as WPF, it is often helpful to write a very simple use case tester just to see the technology in action.<br />To start, create a new Console application and reference the <b>ContinuousLinq</b> Assembly that you downloaded from the latest release or that you built on your own using Visual Studio 2008.<br />In this sample, build a Customer class that looks like the one below:<br /><br /><pre>
+public class Customer : INotifyPropertyChanged
+{
+    private int _age;
+    private string _name;
+
+    public int Age
+    {
+      get { return _age; }
+      set
+      {
+        _age = value;
+        NotifyChanged(&quot;Age&quot;);
+      }
+    }
+
+    public string Name
+    {
+      get { return _name; }
+      set
+      {
+        _name = value;
+        NotifyChanged(&quot;Name&quot;);
+      }
+    }
+
+    private void NotifyChanged(string propName)
+    {
+        if (PropertyChanged != null)
+            PropertyChanged(this, new PropertyChangedEventArgs(propName));
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+}
+
+</pre><br /><br />Once you have your customer class built, you can create a ContinuousCollection to hold the source list and you can then create a query to hold all Customers of legal drinking age (for this sample, that&#39;s 21):<br /><br /><pre>
+    ContinuousCollection&lt;Customer&gt; _source = new ContinuousCollection&lt;Customer&gt;();
+    ContinuousCollection&lt;Customer&gt; _legalDrinkers = from cust in _source
+                                                                              where cust.Age &gt;= 21
+                                                                              select cust;
+</pre><br /><br />Note that defining the second query didn&#39;t require any items to be in the source collection, which is part of the benefit of using CLINQ. Now you can attach to the CollectionChanged event handler of the <b>_legalDrinkers</b> collection so you can watch when items are added:<br /><br /><pre>
+    _legalDrinkers.CollectionChanged += 
+         new System.Collections.Specialized.NotifyCollectionChangedEventHandler(legalDrinkers_CollectionChanged);
+</pre><br /><br />And your event handler:<br /><br /><pre>
+static void legalDrinkers_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+{
+    if (e.Action == NotifyCollectionChangedAction.Add)
+    {
+        Console.WriteLine(&quot;Item Added.&quot;);
+    }            
+}
+</pre><br /><br />At this point you have a source collection and you also have a ContinuousCollection result set that will continuously update itself when items are added to the source.<br />To see this in action, add the following few lines of code to the end of your <b>Main</b> method:<br /><br /><pre>
+    _source.Add( new Customer() { Name = &quot;Bob&quot;, Age = 20 });
+    _source.Add( new Customer() { Name = &quot;Al&quot;, Age = 23 });
+</pre><br /><br />When you run this application, <b>_legalDrinkers</b> will receive a collection changed event fire notification when <b>Al</b> is added to the source but not when <b>Bob</b> is added. This illustrates the continuous nature of CLINQ and how you can declaratively define dynamic, streaming views of data.<br /><br />The last test that you want to do in order to make sure that CLINQ is functioning properly is to increase someone&#39;s age and make sure that the modified<br />customer is then added to the output collection automatically. To do this, add the following line of code to your project:<br /><br /><pre>
+    _source[0].Age = 35; // Bob grew up!
+</pre><br /><br />Now you should receive two collection changed event firings for the output collection. <br />The first one for when Al is added to the source with a sufficient age to qualify for membership in the output collection, <br />and the second for when Bob is modified to subsequently pass the predicate condition on the output collection.<br /><br />More detailed samples are available in the downloads section for each release.<br /><br />For more information on how CLINQ works, check out this Wiki page: <a href="https://clinq.codeplex.com/wikipage?title=How%20CLINQ%20Works&referringTitle=Hello%20World%20-%20CLINQ%20Style">How CLINQ Works</a></div><div class="ClearBoth"></div>

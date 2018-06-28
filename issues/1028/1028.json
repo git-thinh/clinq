@@ -1,0 +1,81 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2008-04-16T11:33:16.25-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The OrderBy expression uses InsertInSorted Order as well as Remove/Insert operations which are non-atomic. This results in race conditions if you are adding/removing/updating values in the underlying collection while consuming in another thread.\n \nI have attached a zip of the two files I updated, as well as a patch to apply the changes from R4877.\n \nThe updates I did to the ContinuousCollection were largely based on the ThreadSafeObservableCollection available here -> http://blogs.microsoft.co.il/blogs/tamir/archive/2007/04/22/Thread-safe-observable-collection.aspx.",
+    "LastUpdatedDate": "2013-05-16T01:33:41.297-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "clinq",
+    "ReportedDate": "2008-02-25T11:36:07.52-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "OrderBy Expressions are not thread safe",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 1028
+  },
+  "FileAttachments": [
+    {
+      "FileId": 353,
+      "FileName": "ThreadSafeOrderBy.zip",
+      "DownloadUrl": ".\\353"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "We will be looking at this in a week or so, but we also need to clarify that by intention, only certain threading scenarios are supported by CLINQ.  A note will be added in the project notes about this.",
+      "PostedDate": "2008-02-26T06:54:50.693-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "OK, we have discussed this, and basically, CLINQ is not designed to enforce thread-safety.  This clarification will be posted soon.  You can update the source collection from a thread other than the one it was created on, but you cannot consume in yet a third thread.  The target scenario is where the source collection is created on the WPF Dispatcher Thread, and the result is bound to the UI.  CLINQ will also work in non-GUI scenarios, but again, no thread-safety is enforced.",
+      "PostedDate": "2008-03-18T09:51:53.313-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "As Erb says, we have made a design decision from the beginning not specifically guard against re-entrant execution. If you need thread-safe access when writing to a continuous collection, it is the responsibility of your application to block access to that section as you see fit.",
+      "PostedDate": "2008-04-14T12:28:09.21-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-04-14T12:28:37.723-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-04-16T11:33:16.25-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-14T11:19:00.327-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T01:33:41.297-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

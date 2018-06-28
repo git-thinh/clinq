@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "66798",
+    "ThreadId": "20139",
+    "Html": "\r\nAny chance of posting a sample or two?<br />",
+    "PostedDate": "2008-01-08T12:10:35.33-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "66799",
+    "ThreadId": "20139",
+    "Html": "<br /><div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />joe72 wrote:<br />Any chance of posting a sample or two?<br /><br /></div><br />I've got a couple samples cooking. I just want to run them on a couple of different VMs before I post them up. Look for some samples inside the 1.0.0.0 release before the end of the week.<br />",
+    "PostedDate": "2008-01-08T12:14:32.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "66983",
+    "ThreadId": "20139",
+    "Html": "\r\nI've just posted the first demo. It's a WCF / WPF application that receives network messages from a Peer Mesh network and then uses CLINQ queries to split the messages into \"bins\" or \"baskets\" and binds a WPF GUI to the output. You can find the code for the demo in the source tree for this project and you can also download it as an additional file that is part of the 1.0.0.0 release.<br />",
+    "PostedDate": "2008-01-09T11:50:04.12-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

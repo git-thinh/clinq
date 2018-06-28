@@ -1,0 +1,5 @@
+C:\_CS\clinq\sourceCode\ContinuousLinq2\ContinuousLinq\bin\Debug\ContinuousLinq.dll
+C:\_CS\clinq\sourceCode\ContinuousLinq2\ContinuousLinq\bin\Debug\ContinuousLinq.pdb
+C:\_CS\clinq\sourceCode\ContinuousLinq2\ContinuousLinq\obj\Debug\ContinuousLinq.csproj.CoreCompileInputs.cache
+C:\_CS\clinq\sourceCode\ContinuousLinq2\ContinuousLinq\obj\Debug\ContinuousLinq.dll
+C:\_CS\clinq\sourceCode\ContinuousLinq2\ContinuousLinq\obj\Debug\ContinuousLinq.pdb

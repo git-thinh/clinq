@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I think there is an issue in the SubscriptionNode class. This seems to be preventing CLinq from detecting changes in some multi-value expressions. As a result, some continuous value based expressions are not kept up to date.\n \nOn line 91 of SubscriptionNode.cs (in ContinuousLinq2), I think the following lines should be changed from:\n \n                ...\n                if (nodeMatchingPropertyName == null)\n                    return;\n \n                nodeMatchingPropertyName.UpdateSubject(this.Subject);\n                ...\n \nto \n                ...\n                if (nodeMatchingPropertyName != null)\n                    nodeMatchingPropertyName.UpdateSubject(this.Subject);\n                ...\n \n \nTo reproduce this scenario, construct a multi-value ContinuousValue like:\n \n            _result = LineItems.AsReadOnly().ContinuousSum(item => item.NumberPurchased * item.Product.UnitCost);\n \nwhere LineItems is a collection of classes with a numeric NumberPurchased property and another property that references the Product class, which in turn has a numeric property UnitCost.\n \nIn this case, changes to the Product's UnitCost will update the _result. However, changes tot he item.NumberPurchased will not update the _result value.\n \nThe code in the current version of SubscriptionNode will cause the OnPropertyChanged method to return before it has a chance to invoke the PropertyChanged() delegate on the last line of the method.\n \nThe attached project includes a sample that reproduces the issue.",
+    "LastUpdatedDate": "2013-02-14T11:18:57.55-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "clinq",
+    "ReportedDate": "2010-10-01T13:42:50.733-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Possible Bug in ContinuousLinq 2's SubscriptionNode class",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7327
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2346,
+      "FileName": "ContinuousLinqSubscriptionNodeBugRepo_2010_10_01.zip",
+      "DownloadUrl": ".\\2346"
+    }
+  ],
+  "Comments": []
+}

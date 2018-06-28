@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "229834",
+    "ThreadId": "67619",
+    "Html": "<p>I am binding <strong>ReadOnlyContinuousCollection&lt;T&gt;</strong> to a grid&nbsp; T implements INotifyPropertyChanged</p>\r\n<p>which is created as below</p>\r\n<p><strong>from data in _continuousCollection orderby data.id where data.qv == &quot;1&quot;</strong></p>\r\n<p>and as data is available/removed / updates I do add/delete on _continuousCollection.</p>\r\n<p>Filtering works fine only issue is that sort order changes .</p>\r\n<p>at update rows goes up / down in the grid. any feed back</p>\r\n<p>looks like internnaly clinq is doing delete and insert ?</p>",
+    "PostedDate": "2009-09-01T11:49:21.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232876",
+    "ThreadId": "67619",
+    "Html": "<p>Yes,</p>\r\n<p>Filtering does not guarantee sort order.&nbsp; The same thing applies for regular linq even though it always does return the list the same way.&nbsp; The reason for this is because of performance, and some other esoteric stuff.&nbsp; If you want sort order, then you need to explicitly sort the data.&nbsp; I'll take a peak again if anything new strikes me on how to keep the ordering consistent.</p>\r\n<p>Thanks,</p>\r\n<p>Andy</p>",
+    "PostedDate": "2009-09-09T16:32:20.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242160",
+    "ThreadId": "67619",
+    "Html": "<p>Hi,</p>\r\n<p>I have the same problem as <a id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl00_UserNameLink\" href=\"http://www.codeplex.com/site/users/view/mrudang\">mrudang</a></p>\r\n<p>If i bind a simple OrderByDescending()-Query to my ListBox everything works fine. When items are added the ListBox showes the correct sorted items.</p>\r\n<p>If i extend the query with a Select() and Distinct() the sort order dont update anymore. But i still see newly added items.</p>\r\n<p>If i apply the CLINQ-Query to the ItemsSource of my ListBox again the sort order is restored. Seems like i have to recall that method if something changes manually. That means if my collection is changed AND if any item in my collection fires NotifyPropertyChanged. That also means that i have to update the PropertyChanged-Handlers in my Collection...</p>\r\n<p>It would be very cool if CLINQ could also refresh the sort-order automatically in filtering queries.</p>\r\n<p>Lector</p>",
+    "PostedDate": "2009-10-05T06:28:08.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

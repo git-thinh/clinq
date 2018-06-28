@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "125367",
+    "ThreadId": "37812",
+    "Html": "Hi,&nbsp;<br>\r\n&nbsp;Can we use CLINQ with Silverlight 2.0? I tried porting the code&nbsp;but some of the .Net classes and lib are not recognised by SL Classlibrary project. <br>\r\n<br>\r\nMany Thanks,<br>\r\nMahesh\r\n",
+    "PostedDate": "2008-10-15T10:17:52.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "167825",
+    "ThreadId": "37812",
+    "Html": "Making it available in Silverlight has always been something that I wanted to do...maybe now that 2.0 is in the can I'll take another look at what it might take to make it feasible.\r\n",
+    "PostedDate": "2009-03-13T10:26:34.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

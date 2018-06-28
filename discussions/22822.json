@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "76302",
+    "ThreadId": "22822",
+    "Html": "\r\nIt would be nice if there was some way to adjust the filter conditions and allow the entire underlying set to have its inclusion in the result set reevaluated. This would require modifications to the FilteringViewAdapter. It could be as simple as some way to notify from the base collection that a variable used by the filtering condition function has been updated, so please rerun the function over all underlying items.<br /><br />Let me know if this is possible, and if it is something you are planning on doing already.<br /><br />Regards,<br /><br />-Karl<br />",
+    "PostedDate": "2008-02-25T11:44:17.717-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "76310",
+    "ThreadId": "22822",
+    "Html": "<br /><div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />krs43 wrote:<br />It would be nice if there was some way to adjust the filter conditions and allow the entire underlying set to have its inclusion in the result set reevaluated. This would require modifications to the FilteringViewAdapter. It could be as simple as some way to notify from the base collection that a variable used by the filtering condition function has been updated, so please rerun the function over all underlying items.<br /><br />Let me know if this is possible, and if it is something you are planning on doing already.<br /><br />Regards,<br /><br />-Karl<br /><br /></div><br />This is definitely something that I've thought about doing, just haven't gotten around to it. I tried to hit the largest, most frequently used use case scenarios with the LINQ operators. Now that those are done, once I (or the others working on the project) get some free time, adding support for this kind of thing as well as continuous aggregation are on my priority list.<br />",
+    "PostedDate": "2008-02-25T12:01:43.47-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "76365",
+    "ThreadId": "22822",
+    "Html": "\r\nThanks for the update, let me know if there is anyway I can contribute (I posted my mods for the orderby filter under Issue Tracker). If you have a starting point, let me know, otherwise I will atleast make a quick change to allow for refreshing so that I can use this in my current program.<br /><br />Thanks,<br /><br />-Karl<br />",
+    "PostedDate": "2008-02-25T16:06:06.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "87414",
+    "ThreadId": "22822",
+    "Html": "<br /><div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />krs43 wrote:<br />Thanks for the update, let me know if there is anyway I can contribute (I posted my mods for the orderby filter under Issue Tracker). If you have a starting point, let me know, otherwise I will atleast make a quick change to allow for refreshing so that I can use this in my current program.<br /><br />Thanks,<br /><br />-Karl<br /><br /></div><br />Have you tried using the ReEvaluate() method after modifying the contents of the filter? This should re-evaluate the conditions in your filter function and cascade that out through your CLINQ query. I don't think ReEvaluate() is in 1.0, you'll have to grab the 1.1 source until we get the 1.1 release build out.<br /><br />You would invoke it like this:<br /><br />myContinuousCollection.SourceAdapter.ReEvaluate();<br />",
+    "PostedDate": "2008-04-17T11:09:21.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475557",
+    "ThreadId": "22822",
+    "Html": "Hi,<br>\r\nFirst of all: AWESOME job on CLINQ! Love it.<br>\r\n<br>\r\nQuestion: I cannot find ReEvaluate in 2.x. Did you remove this?<br>\r\nIs there a smarter way to have the filters update if the parameters change?<br>\r\n<br>\r\nHere is a simple code sample<br>\r\n            // First filter Task.Title<br>\r\n            _listFiltered1 = from item in _mainList<br>\r\n                           where item.Title.Contains(SearchText)<br>\r\n                           select item;<br>\r\n<br>\r\n            // Then filter Task.Tag (notice we base it on the result of the first search)<br>\r\n            _listFiltered2 = from item in _listFiltered1<br>\r\n                             where item.Tag.Contains(SearchText2)<br>\r\n                             select item;<br>\r\n<br>\r\nWhen I change either SearchText or SearchText2, I would like the filters to reevaluate.<br>\r\n<br>\r\nThanks!",
+    "PostedDate": "2010-08-02T11:15:12.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,5 @@
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\NetworkLibrary\bin\Debug\NetworkLibrary.dll
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\NetworkLibrary\bin\Debug\NetworkLibrary.pdb
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\NetworkLibrary\obj\Debug\NetworkLibrary.csproj.CoreCompileInputs.cache
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\NetworkLibrary\obj\Debug\NetworkLibrary.dll
+C:\_CS\clinq\sourceCode\NetworkFilteringDemo\NetworkLibrary\obj\Debug\NetworkLibrary.pdb

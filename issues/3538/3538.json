@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In \"MonitorWindowModel.cs\", _graphWindowTicks is defined as:\n_graphWindowTicks =\n                from tick in _tickerData\n                where tick.TimeStamp >= DateTime.Now.AddMinutes(-5) &&\n                      tick.Symbol == \"AAPL\"\n                select tick; // return last 5 minutes worth of ticks for AAPL */\n \nWith my understanding of CLINQ, this doesn't accomplish what I would expect. This ContinuousCollection continues to grow, regardless of elapsed time window. This is a very valuable capability and I would be very interested in knowing how to efficiently achieve the behavior found in the code comment.",
+    "LastUpdatedDate": "2013-02-14T11:18:59.27-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "clinq",
+    "ReportedDate": "2008-12-29T10:01:12.057-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Incorrect behavior for _graphWindowTicks in StockMonitorDemo?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 3538
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

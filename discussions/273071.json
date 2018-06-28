@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "673676",
+    "ThreadId": "273071",
+    "Html": "\r\n<p>I am chasing memory leaks on my app, and noticed there are quite a few related to ReactiveObject. In looking at WeakPropertyBridge.CheckForUnsubscribe, I noticed that calls to it are commented out, and not maitained for a while (they don't compile correctly\r\n anymore in uncommented). What is the reason for the call to be commented out? Is there any other place in the code that is doing that job? Is doesn't look like it to me...</p>\r\n",
+    "PostedDate": "2011-09-19T07:20:10.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

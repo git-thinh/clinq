@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "675933",
+    "ThreadId": "273641",
+    "Html": "\r\n<p>CLINQ'ers,</p>\r\n<p>I'm sure you get asked this from time to time. Where should a veteran C# .NET LINQ developer begin as a C&#43;&#43;/CLI CLINQ newbie?</p>\r\n<p>Briefly, I've got some classes in a C&#43;&#43;/CLI library that are exposing some IEnumerable&lt;&gt; results given a Dictionary&lt;&gt; backing field. I would like to ask a series of questions about that dictionary exposed through the enumerations. It seems CLINQ\r\n a strong viable approach to accomplishing this task?</p>\r\n<p>Where might I find some documentation? Or I just downloaded the source itself as well. Or for some tutorials? Throughout Codeplex?</p>\r\n<p>Thanks...</p>\r\n<p>Best regards,</p>\r\n<p>Michael</p>\r\n",
+    "PostedDate": "2011-09-23T10:38:52.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "675934",
+    "ThreadId": "273641",
+    "Html": "<p>This primer looks like as good an introduction as any to demonstrate the issue. I think that basically unlocks what I need to do.</p>\n<p><a title=\"The Linq between C# and C++\" href=\"http://weblogs.asp.net/kennykerr/archive/2006/05/11/The-Linq-between-C_2300_-and-C_2B002B00_.aspx\">The Linq between C# and C++</a></p>",
+    "PostedDate": "2011-09-23T10:43:30.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "675946",
+    "ThreadId": "273641",
+    "Html": "<p>I should also add, we're using Visual Studio 2008 / Visual C++ for its C++/CLI features (among other things). Which it seems CLINQ will support?</p>",
+    "PostedDate": "2011-09-23T11:03:31.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

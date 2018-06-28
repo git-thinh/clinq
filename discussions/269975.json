@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "661620",
+    "ThreadId": "269975",
+    "Html": "\r\n<p>Consider the following query:</p>\r\n<p>ContinuousItemList = from item in Model.ItemList select new ItemViewModel(item);</p>\r\n<p>&nbsp;</p>\r\n<p>Now say that there are 5 items in the list. &nbsp;If I execute the following code, the item inserted at index 2 of Model.ItemList appears at the end of the ContinuousItemList. &nbsp;As a result the order across the two lists is not consistent.</p>\r\n<p>Item item = Model.Items[0];</p>\r\n<p>Model.Items.RemoveAt(0);</p>\r\n<p>Model.Items.Insert(2, item)</p>\r\n<p>&nbsp;</p>\r\n<p>Am I doing something wrong? &nbsp;Is this a known problem? &nbsp;Is there a workaround?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>-Jeff</p>\r\n",
+    "PostedDate": "2011-08-22T09:20:19.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

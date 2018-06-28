@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "This test (added to WhereTest) fails with an ArgumentException on the first call to Add.  This is because an item previously monitored is being added to the source collection again.\n \n        [Test]\n        public void ClearSource_ThenAdd_SameItems()\n        {\n            ReadOnlyContinuousCollection<Person> output = from person in _source\n                                                          where person.Age > 10\n                                                          select person;\n            Assert.AreEqual(1, output.Count);\n            List<Person> oldItems = new List<Person>(_source);\n            _source.Clear();\n            Assert.AreEqual(0, output.Count);\n            _source.Add(oldItems[0]);\n            Assert.AreEqual(0, output.Count);\n            _source.Add(oldItems[1]);\n            Assert.AreEqual(1, output.Count);\n        }\n \nPatch provided in Patches section.",
+    "LastUpdatedDate": "2013-02-14T11:18:57.843-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "clinq",
+    "ReportedDate": "2010-07-19T15:32:06.683-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Readding an item causes ArgumentException",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7003
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

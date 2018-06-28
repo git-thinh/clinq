@@ -1,0 +1,8 @@
+C:\_CS\clinq\sourceCode\ContinuousLinq2\PerformanceConsole\bin\Debug\PerformanceConsole.exe
+C:\_CS\clinq\sourceCode\ContinuousLinq2\PerformanceConsole\bin\Debug\PerformanceConsole.pdb
+C:\_CS\clinq\sourceCode\ContinuousLinq2\PerformanceConsole\bin\Debug\ContinuousLinq.dll
+C:\_CS\clinq\sourceCode\ContinuousLinq2\PerformanceConsole\bin\Debug\ContinuousLinq.pdb
+C:\_CS\clinq\sourceCode\ContinuousLinq2\PerformanceConsole\obj\Debug\PerformanceConsole.csprojResolveAssemblyReference.cache
+C:\_CS\clinq\sourceCode\ContinuousLinq2\PerformanceConsole\obj\Debug\PerformanceConsole.csproj.CoreCompileInputs.cache
+C:\_CS\clinq\sourceCode\ContinuousLinq2\PerformanceConsole\obj\Debug\PerformanceConsole.exe
+C:\_CS\clinq\sourceCode\ContinuousLinq2\PerformanceConsole\obj\Debug\PerformanceConsole.pdb
