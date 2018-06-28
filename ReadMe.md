@@ -75,17 +75,17 @@ Keywords such as **where**, **select**, **from**, **orderby**, and **groupby** a
 into function calls that make extensive use of lambdas and language extensions to add these methods to objects of type _IEnumerable<T>_, etc.
 
 For example, the following natural syntax LINQ query:
-{{
+
     var q = from cust in rawData.Customers
                 where cust.Age > 21
                 orderby cust.Name
                 select cust;
-}}
+
 
 will be re-written in language extension syntax by the compiler to look more like this:
-{{
+
     var q = rawData.Customers.Where( cust => cust.Age > 21).OrderBy( cust => cust.Name ).Select ( row => row );
-}}
+
 
 # Extending LINQ with Language Extensions
 
@@ -100,7 +100,7 @@ This is an extension that adds a **Where** method on an input collection wrapper
 Note how a new CLINQ collection is created for the output and a **FilteringViewAdapter<T>** is attached to the input. 
 This behavior that we call _adapter chaining_ is key to allowing CLINQ to function properly.
 
-{{
+
  private static ContinuousCollection<T> Where<T>(
             InputCollectionWrapper<T> source, Func<T, bool> filterFunc) where T : INotifyPropertyChanged
         {
@@ -110,16 +110,16 @@ This behavior that we call _adapter chaining_ is key to allowing CLINQ to functi
 
             return output;            
         }
-}}
+
 
 When more than one LINQ query segment exists, the output from one method call is passed as the input to the next language extension in line.
 For example, in the following query:
 
-{{
+
     var q = from order in rawData.Orders
           where order.Price > 500.00
           orderby order.VendorID desc
-}}
+
 
 Two adapters will be created. The **Where** method will be invoked, which will attach a **FilterViewAdapter<T>** to the source collection.
 The output of that (which is dynamically updated by the FilterViewAdapter<T> in response to source events) will be passed as the input to the **OrderBy** method.
@@ -141,14 +141,14 @@ pump all that data to the foreground thread, you can simply define a query again
 **tickerSource.AllTicks** and the ContinousCollection and CLINQ will take care of everything else. Changes that occur in the CLINQ
 adapter chain pipeline are propagated on the Dispatcher thread, making them visible to the WPF data binder.
 
-{{
+
     var ticks = from tick in tickerSource.AllTicks
                     where tick.Symbol == "AAPL" && 
                               tick.Price > 100 &&
                               tick.Price < 120
                     select tick;
     orderBook.DataContext = ticks; // WPF data binding
-}}
+
 
 
 ## Network Message Monitor
@@ -156,12 +156,12 @@ In this scenario, an application is gathering events from multiple sources and p
 query below would enable an application to 'sit back' and listen, dynamically and continuously maintaining a result set that only
 consists of network events that are considered critical.
 
-{{
+
     var criticalAlerts = from msg in eventLog.AllEvents
         where msg.Priority == MessagePriority.Critical
         orderby msg.EventTimeStamp desc
         select msg;
-}}
+
 
 ## Gaming (especially strategy / board games)
 In this scenario, the player is in a 3D universe piloting their space ship. You might have Windows Workflow Foundation code that handles the
@@ -169,7 +169,7 @@ artificial intelligence of enemies. Wouldn't it be so much easier than writing b
 just define a collection called **enemiesNearby** and then just define an event handler that allows you to inject your AI logic when enemies come
 in and out of radar range?
 
-{{
+
     var enemiesNearby = 
       from gameObject in sharedState.AllGameObjects
       where gameObject.ObjectType == GameObjects.NPC &&
@@ -178,15 +178,14 @@ in and out of radar range?
     
     enemiesNearby.CollectionChanged += 
       new NotifyCollectionChangedEventHandler(enemiesNearby_Changed); // respond to newly detected threats!
-}}
+
 
 ## Administration / BI Console
 In this sample scenario, you have an application that is monitoring KPIs (Key Performance Indicators) for a Business Intelligence workbench.
 This application has a section of it's GUI dedicated to monitoring the failing KPIs throughout an organization. The following query shows how
 you could define a single query to monitor all failing KPIs that can then be immediately bound to the WPF or WinForms GUI:
 
-{{
+
    var needsAttention = from kpi in biSystem.KPIList
                                   where kpi.Status == KpiStatus.RedRange // KPI is failing, needs attention
                                   select kpi;
-}}
